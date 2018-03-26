@@ -2,6 +2,7 @@
 from __future__ import absolute_import
 import os
 import octoprint.plugin
+import keyring
 import yagmail
 import flask
 import tempfile
