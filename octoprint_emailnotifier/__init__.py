@@ -8,7 +8,7 @@ import tempfile
 from email.utils import formatdate
 
 from email.utils import formatdate
-from flask.ext.login import current_user
+
 
 class EmailNotifierPlugin(octoprint.plugin.EventHandlerPlugin,
                           octoprint.plugin.SettingsPlugin,
@@ -54,7 +54,7 @@ class EmailNotifierPlugin(octoprint.plugin.EventHandlerPlugin,
 		restricted = ("mail_server", "mail_port", "mail_tls", "mail_ssl","mail_username", "recipient_address", "mail_useralias")
 		for r in restricted:
 			if r in data and (current_user is None or current_user.is_anonymous() or not current_user.is_admin()):
-				data[r] = None
+				#data[r] = None
 
 		return data
 
